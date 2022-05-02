@@ -11,5 +11,6 @@ app.use(express.json())
 app.all("/", logger)
 
 app.use(userRouter)
+
 setMongoConnection()
 app.listen(PORT, () => console.log(`Serveur lancé sur le port ${PORT}`))
