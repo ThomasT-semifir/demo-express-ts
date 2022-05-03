@@ -8,8 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 8081
 
 app.use(express.json())
-app.all("/", logger)
-
+app.use(logger)
 app.use(userRouter)
 
 setMongoConnection()

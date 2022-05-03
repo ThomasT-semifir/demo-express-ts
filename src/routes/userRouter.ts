@@ -1,9 +1,17 @@
 import { userController } from './../controllers/UserController';
 import { Router } from "express";
 
-const router: Router = Router();
 const controller = userController;
 
-router.get("/users", controller.findAll)
+const router: Router = Router();
 
-export {router as userRouter}
+router.get("/users", controller.findAll)
+router.get("/users/search", controller.search)
+router.post("/users", controller.create)
+router.get("/users/:id", controller.findById)
+router.delete("/users/:id", controller.delete)
+router.put("/users/:id", controller.replace)
+router.patch("/users/:id", controller.partialUpdate)
+
+
+export { router as userRouter }
